@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+id btnCardios
+id btnLogin
+id btnPrendreRdv
+id btnRegister
+id btnValider
+id editDate
+id editHeure
+id editMotif
+id editName
+id editPassword
+id editPhone
+id listViewMedecins
+id recyclerView
+id textCreateAccount
+id textDate
+id textHeure
+id textMotif
+layout activity_dashboard
+layout activity_inscription
+layout activity_login
+layout activity_medecins
+layout activity_rendez_vous
+layout activity_rendez_vous_list
+layout item_rendezvous
