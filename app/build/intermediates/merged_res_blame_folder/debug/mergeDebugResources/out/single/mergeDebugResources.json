@@ -1,30 +1,46 @@
 [
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_activity_rendez_vous_list.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/activity_rendez_vous_list.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_login.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_login.xml"
     },
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_activity_inscription.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/activity_inscription.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_add_doctor.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_add_doctor.xml"
     },
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_activity_medecins.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/activity_medecins.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_medecins.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_medecins.xml"
     },
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_activity_dashboard.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/activity_dashboard.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_spinner_background.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/spinner_background.xml"
     },
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_activity_rendez_vous.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/activity_rendez_vous.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_add_rdv.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_add_rdv.xml"
     },
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_activity_login.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/activity_login.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_item_rendezvous.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/item_rendezvous.xml"
     },
     {
-        "merged": "com.example.telemedecin.app-debug-4:/layout_item_rendezvous.xml.flat",
-        "source": "com.example.telemedecin.app-main-6:/layout/item_rendezvous.xml"
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_rendez_vous.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_rendez_vous.xml"
+    },
+    {
+        "merged": "com.example.telemedecin.app-debug-33:/layout_edittext_background.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/edittext_background.xml"
+    },
+    {
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_inscription.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_inscription.xml"
+    },
+    {
+        "merged": "com.example.telemedecin.app-debug-33:/layout_item_doctor.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/item_doctor.xml"
+    },
+    {
+        "merged": "com.example.telemedecin.app-debug-33:/layout_activity_dashboard.xml.flat",
+        "source": "com.example.telemedecin.app-main-35:/layout/activity_dashboard.xml"
     }
 ]

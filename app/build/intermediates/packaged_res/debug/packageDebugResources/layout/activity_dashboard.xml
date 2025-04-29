@@ -1,48 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-    <LinearLayout 
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center_horizontal"
+    <!-- Barre de navigation -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:title="Dashboard"
+        android:titleTextColor="#FFFFFF"
+        android:elevation="4dp"/>
 
-        <TextView
-            android:text="Si7ati"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
+    <!-- Recherche -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Rechercher"
+        android:iconifiedByDefault="false"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Grid des boutons d'action -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+
+        <!-- Bouton Ajouter un Médecin -->
+        <Button
+            android:id="@+id/btnAddDoctor"
+            android:text="Ajouter un Médecin"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3F51B5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:text="Les pédiatres"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
+            android:layout_margin="8dp"/>
 
-
+        <!-- Bouton Ajouter un Rendez-vous -->
         <Button
-            android:text="Médecine générale"
-            android:layout_width="match_parent"
+            android:id="@+id/btnAddRdv"
+            android:text="Ajouter un Rendez-vous"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3F51B5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
+            android:layout_margin="8dp"/>
 
+        <!-- Bouton Liste des Médecins -->
         <Button
-            android:text="Les gynécologues"
-            android:layout_width="match_parent"
+            android:id="@+id/btnDoctorsList"
+            android:text="Liste des Médecins"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3F51B5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
-        <Button
-            android:id="@+id/btnCardios"
-            android:text="Les cardios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
+            android:layout_margin="8dp"/>
 
-    </LinearLayout>
-</ScrollView>
+        <!-- Bouton Déconnexion -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:text="Déconnexion"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F44336"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"/>
+    </GridLayout>
+</LinearLayout>

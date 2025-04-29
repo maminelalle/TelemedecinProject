@@ -9,6 +9,7 @@
         android:targetSdkVersion="34" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <permission
         android:name="com.example.telemedecin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -20,7 +21,10 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:extractNativeLibs="false"
-        android:testOnly="true" >
+        android:label="Telemedecin"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.Telemedecin" >
         <activity
             android:name="com.example.telemedecin.LoginActivity"
             android:exported="true" >
@@ -34,6 +38,8 @@
         <activity android:name="com.example.telemedecin.InscriptionActivity" />
         <activity android:name="com.example.telemedecin.MedecinsActivity" />
         <activity android:name="com.example.telemedecin.RendezVousActivity" />
+        <activity android:name="com.example.telemedecin.AddDoctorActivity" />
+        <activity android:name="com.example.telemedecin.AddRdvActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

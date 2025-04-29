@@ -1,46 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E3F2FD">
 
-    <TextView
-        android:text="Créer un compte"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/editName"
-        android:hint="Nom complet"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editPhone"
-        android:hint="Téléphone"
-        android:inputType="phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"/>
+        <TextView
+            android:text="Créer un compte 👤"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1565C0"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/editPassword"
-        android:hint="Mot de passe"
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"/>
+        <EditText
+            android:id="@+id/editName"
+            android:hint="Nom complet"
+            android:drawableStart="@android:drawable/ic_menu_edit"
+            android:backgroundTint="#1565C0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:text="Créer le compte"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"/>
-</LinearLayout>
+        <EditText
+            android:id="@+id/editPhone"
+            android:hint="Téléphone"
+            android:inputType="phone"
+            android:drawableStart="@android:drawable/ic_menu_call"
+            android:backgroundTint="#1565C0"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:backgroundTint="#1565C0"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="S'inscrire"
+            android:backgroundTint="#1565C0"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

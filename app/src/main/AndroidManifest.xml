@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
-    <application>
+    <application
+        android:label="Telemedecin"
+        android:theme="@style/Theme.Telemedecin"
+        android:supportsRtl="true">
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -16,6 +21,10 @@
         <activity android:name=".InscriptionActivity" />
         <activity android:name=".MedecinsActivity" />
         <activity android:name=".RendezVousActivity" />
+        <activity android:name=".AddDoctorActivity" />
+        <activity android:name=".AddRdvActivity" />
+
+
     </application>
 
 </manifest>

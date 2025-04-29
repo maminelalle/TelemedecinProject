@@ -1,77 +1,76 @@
 package com.example.telemedecin;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RendezVousActivity extends AppCompatActivity {
 
-    EditText editDate, editHeure, editMotif;
-    Button btnValider;
-    DatabaseHelper db;
-    int userId = 1; // Temporaire pour le test
+    private RecyclerView recyclerViewRdv;
+    private RendezVousAdapter rdvAdapter;
+    private List<RendezVous> rdvList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rendez_vous);
 
-        editDate = findViewById(R.id.editDate);
-        editHeure = findViewById(R.id.editHeure);
-        editMotif = findViewById(R.id.editMotif);
-        btnValider = findViewById(R.id.btnValider);
+        recyclerViewRdv = findViewById(R.id.recyclerViewRdv);
+        recyclerViewRdv.setLayoutManager(new LinearLayoutManager(this));
 
-        db = new DatabaseHelper(this);
+        rdvList = new ArrayList<>();
+        rdvAdapter = new RendezVousAdapter(rdvList);
+        recyclerViewRdv.setAdapter(rdvAdapter);
 
-        // Bouton de validation
-        btnValider.setOnClickListener(v -> {
-            String date = editDate.getText().toString();
-            String heure = editHeure.getText().toString();
-            String motif = editMotif.getText().toString();
-
-            // Vérifie que tous les champs sont remplis
-            if (date.isEmpty() || heure.isEmpty() || motif.isEmpty()) {
-                Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            // Insère le rendez-vous dans la base de données
-            boolean success = db.insertRendezVous(date, heure, motif, userId);
-            if (success) {
-                Toast.makeText(this, "Rendez-vous enregistré !", Toast.LENGTH_SHORT).show();
-                finish();  // Ferme l'activité après l'enregistrement
-            } else {
-                Toast.makeText(this, "Erreur, réessaye.", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // Charger les rendez-vous depuis la base de données distante
+        getRdvFromDatabase();
     }
 
-    public class RendezVousListActivity extends AppCompatActivity {
-        private RecyclerView recyclerView;
-        private RendezVousAdapter adapter;
-        private List<RendezVous> rendezVousList;
-        private DatabaseHelper db;
-        private int userId = 1; // Utilisateur actuel
-    
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_rendez_vous_list);
-    
-            recyclerView = findViewById(R.id.recyclerView);
-            db = new DatabaseHelper(this);
-            rendezVousList = db.getAllRendezVous(userId);
-    
-            adapter = new RendezVousAdapter(rendezVousList);
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        }
-    }
+    private void getRdvFromDatabase() {
+        String url = "http://10.0.2.2/TelemedecinProject/getrendezvous.php"; // L'URL de ton API PHP
 
+        // Utilisation de Volley pour effectuer la requête
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject rdvJson = response.getJSONObject(i);
+                                int id = rdvJson.getInt("id");
+                                String date = rdvJson.getString("date");
+                                String heure = rdvJson.getString("time");
+                                String motif = rdvJson.getString("motif");
+
+                                // Créer un objet RendezVous et l'ajouter à la liste
+                                RendezVous rendezVous = new RendezVous(id, date, heure, motif);
+                                rdvList.add(rendezVous);
+                            }
+
+                            // Notifier l'adaptateur que la liste a été mise à jour
+                            rdvAdapter.notifyDataSetChanged();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(RendezVousActivity.this, "Erreur lors du parsing des données.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                error -> Toast.makeText(RendezVousActivity.this, "Erreur : " + error.getMessage(), Toast.LENGTH_SHORT).show()
+        );
+
+        // Ajouter la requête à la file d'attente de Volley
+        Volley.newRequestQueue(this).add(jsonArrayRequest);
+    }
 }

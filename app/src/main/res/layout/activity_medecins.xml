@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="#E3F2FD"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Liste des Médecins"
-        android:textSize="22sp"
+        android:text="Liste des Médecins 🏥"
+        android:textSize="24sp"
+        android:textColor="#1565C0"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/searchMedecin"
+        android:hint="Rechercher un médecin..."
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
 
     <ListView
         android:id="@+id/listViewMedecins"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"  
-        android:layout_weight="1" />  
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/btnPrendreRdv" />
+
+<!--    <SearchView-->
+<!--        android:id="@+id/searchViewDoctors"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:queryHint="Rechercher un médecin..." />-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerViewMedecins"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="8dp" />-->
 </LinearLayout>

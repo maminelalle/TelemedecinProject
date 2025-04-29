@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.telemedecin.app-mergeDebugResources-2:/values-v23/values-v23.xml",
+            "outputFile": "com.example.telemedecin.app-mergeDebugResources-31:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lapto\\.gradle\\caches\\8.9\\transforms\\9359bff6e54ce0bc6d1fd58a403ef5c6\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",

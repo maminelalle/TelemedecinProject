@@ -1,3 +1,0 @@
-C:\TelemedecinProject\app\lint-baseline.xml: Information: 37 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
- [LintBaseline]
-0 errors, 0 warnings (37 warnings filtered by baseline lint-baseline.xml)
